@@ -1,0 +1,11 @@
+//= require vendors/imagesloaded/imagesloaded.pkgd.min.js
+//= require vendors/isotope-layout/isotope.pkgd.min.js
+//= require vendors/jquery-one-page/jquery.nav.min.js
+//= require vendors/jquery.easing/jquery.easing.min.js
+//= require vendors/jquery.matchHeight/jquery.matchHeight.min.js
+//= require vendors/magnific-popup/jquery.magnific-popup.min.js
+//= require vendors/masonry-layout/masonry.pkgd.min.js
+//= require vendors/swiper/swiper.jquery.min.js
+//= require vendors/menu/menu.min.js
+//= require vendors/typed/typed.min.js
+//= require js/main.js

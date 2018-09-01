@@ -1,0 +1,93 @@
+
+<div id="wrapper">
+	<% if @articles && @article && @articles_rand%>
+		<div id="main">
+			<div class="inner">
+				<hr style="border-bottom: solid 10px #f56a6a;" >
+				<div>
+					<a class="sub-nav-bar-article" href="<%= cloths_path%>">Truy cập bảng giá thuê trang phục </a>
+					<a class="sub-nav-bar-article" href="<%= accessories_path%>">Truy cập bảng giá mua phụ kiện </a>
+					<a class="sub-nav-bar-article" href="<%= prices_path%>">Truy cập bảng giá dịch vụ</a>
+				</div>
+				<section id="banner">
+					<div class="content">
+						<header>
+							<a href="<%= article_with_title_path(@article, :title => @article.url) %>">
+								<h1><%=@article.title%></h1>
+							</a>
+							<p>by the Classic Studio</p>
+						</header>
+						<p><%=@article.description[0..700]%></p>
+						<ul class="actions">
+						</ul>
+					</div>
+					<a class="image object" href="<%= article_with_title_path(@article, :title => @article.url) %>">
+						<img src="<%=@article.images[0].name%>" alt="" />
+					</a>
+				</section>
+				<section>
+					<header class="major">
+						<h2>Nội dung chúng tôi có:</h2>
+					</header>
+					<div class="posts">
+						<% @articles.each do |article| %>
+							<article>
+								<% if article.images[0]%>
+									<a class="image object" href="<%= article_with_title_path(article, :title => article.url) %>"><div class="image"><img src="<%=article.images[0].name %>" alt="costume"/></div></a>
+								<% end %>
+								<a href="<%= article_with_title_path(article, :title => article.url) %>">
+									<h3><%=article.title %></h3>
+								</a>
+								<p><%=article.description[0..200] %></p>
+								<ul class="actions">
+								</ul>
+							</article>
+						<% end %>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div class="inner">
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="/clothes">Clothes (Trang phục)</a></li>
+						<li><a href="/posing">Posing (Tạo dáng)</a></li>
+						<li><a href="/concept">Concept (Chủ đề)</a></li>
+						<li><a href="/ask">Ask & Answer (Hỏi đáp)</a></li>
+					</ul>
+				</nav>
+				<section>
+					<header class="major">
+						<h2>Bài viết liên quan</h2>
+					</header>
+					<div class="mini-posts">
+					<% @articles_rand.each do |art| %>
+						<article>
+							<a class="image" href="<%= article_with_title_path(art, :title => art.url) %>">
+								<% if art.images[0] %>
+									<img src="<%= art.images[0].name %>" alt="" />
+								<% end %>
+							</a>
+							<a href="<%= article_with_title_path(art, :title => art.url) %>">
+								<p><%= art.title %></p>
+							</a>
+						</article>
+						<% end %>
+					</div>
+					<ul class="actions">
+					</ul>
+				</section>
+				<section>
+					<div class="fb-page" data-href="https://www.facebook.com/classic.yearbook/" data-height="1500" data-tabs="timeline,events" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/classic.yearbook/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/classic.yearbook/">The Classic Studio - Kỷ yếu số 1 Đà Thành</a></blockquote></div>
+				</section>
+			</div>
+		</div>
+	<% else %>
+		<h2>Nothing here</h2>
+	<% end %>
+</div>
+
